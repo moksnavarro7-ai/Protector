@@ -1,2 +1,2 @@
-python-telegram-bot
-colorama
+python-telegram-bot>=20.0
+colorama>=0.4.6
