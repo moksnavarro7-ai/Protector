@@ -12,12 +12,14 @@ import zipfile
 import random
 import struct
 import base64
+import asyncio
 
 # Telegram imports
 try:
     from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
     from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 except ImportError:
+    print("📦 Installing required packages...")
     os.system("pip install python-telegram-bot --upgrade")
     os.system("pip install colorama")
     from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -36,7 +38,9 @@ except:
     R = G = Y = B = W = RS = ''
 
 # ============= CONFIGURATION =============
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # CHANGE THIS!
+# ✅ YOUR BOT TOKEN
+BOT_TOKEN = "8824864653:AAEmpXwgdiGLKqLq_VjiIcuvRbfFvcNbDHY"
+
 MAX_FILE_SIZE = 50 * 1024 * 1024
 WORK_DIR = "apk_work"
 
@@ -713,6 +717,7 @@ def main():
 {G}🚀 Starting...{RS}
     """)
     
+    # Check token
     if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
         print(f"""
 {R}❌ SETUP REQUIRED!{RS}
